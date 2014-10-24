@@ -1,0 +1,137 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<style>
+		#header{
+			color: white;
+			text-align: center;
+			font: 40px Calibri;
+			background-color: #666eee;
+			width: 600px;			
+			height: 50px;
+			margin: auto;
+			margin-bottom: 5px;
+			padding: 10px;
+			border: 1px;
+			border-style:dotted;
+		}
+		#canvas{						
+			margin: auto;
+			padding: 10px;			
+			border: 1px;
+			border-style: dashed;
+		}
+		#footer{
+			color: white;
+			text-align: center;
+			font: 40px Calibri;
+			background-color: #666eee;
+			width: 600px;			
+			height: 20px;
+			margin: auto;
+			margin-top: 5px;
+			padding: 10px;
+			border: 1px;
+			border-style:dotted;
+		}
+		canvas{display: block;}
+	</style>
+</head>
+<body>
+	<div id="header">Canvas</div>
+	<canvas id="canvas" width= 600px height= 300px></canvas>
+	<div id="footer"></div>
+</body>
+	<script>
+	window.onload =function (){
+		var canvas = document.getElementById("canvas");
+		var isi = canvas.getContext("2d");		
+
+		//lingkaran
+		isi.strokeStyle="blue"
+		isi.fillStyle = "yellow";		
+		isi.beginPath();
+		isi.arc(450,50,20,0,90);
+		isi.stroke();
+		isi.fill();		
+
+		//warna		
+		isi.fillStyle = "magenta";		
+		isi.strokeStyle = "red";		
+		
+		//persegi
+		isi.fillRect(20, 190, 30, 50);
+		isi.fillRect(50, 190, 30, 50);
+		isi.fillRect(80, 190, 30, 50);
+		isi.fillRect(80, 240, 30, 50);		
+		isi.strokeRect(20, 190, 30, 50);
+		isi.strokeRect(50, 190, 30, 50);
+		isi.strokeRect(80, 190, 30, 50);
+		isi.strokeRect(80, 240, 30, 50);
+
+		isi.fillStyle = "white";		
+		isi.strokeStyle = "red";		
+
+		isi.fillRect(90, 190, 20, 20);
+		isi.fillRect(110, 190, 20, 20);		
+		isi.strokeRect(90, 190, 20, 20);
+		isi.strokeRect(110, 190, 20, 20);
+
+		//garis matahari
+		isi.strokeStyle="blue";		
+		isi.beginPath();	//kiri
+		isi.lineTo(400,50);
+		isi.lineTo(420,50);		
+		isi.stroke();
+		isi.closePath();
+		isi.beginPath();	//kanan
+		isi.lineTo(480,50);
+		isi.lineTo(500,50);		
+		isi.stroke();
+		isi.closePath();
+		isi.beginPath();	//atas
+		isi.lineTo(450,0);
+		isi.lineTo(450,20);		
+		isi.stroke();
+		isi.closePath();
+		isi.beginPath();	//bawah
+		isi.lineTo(450,80);
+		isi.lineTo(450,100);		
+		isi.stroke();
+		isi.closePath();
+		isi.beginPath();
+		isi.lineTo(425,25);
+		isi.lineTo(405,5);		
+		isi.stroke();
+		isi.closePath();
+		isi.beginPath();
+		isi.lineTo(475,25);
+		isi.lineTo(495,5);		
+		isi.stroke();
+		isi.closePath();
+		isi.beginPath();
+		isi.lineTo(425,75);
+		isi.lineTo(405,95);		
+		isi.stroke();
+		isi.closePath();
+		isi.beginPath();
+		isi.lineTo(475,75);
+		isi.lineTo(495,95);		
+		isi.stroke();
+		isi.closePath();
+
+		//garis
+		isi.strokeStyle="blue";
+		isi.fillStyle = "grey";		
+		isi.beginPath();
+		isi.lineTo(20,190);
+		isi.lineTo(50,170);
+		isi.lineTo(80,170);
+		isi.lineTo(110,190);
+		isi.lineTo(20,190);		
+		isi.stroke();
+		isi.fill();
+		isi.closePath();
+	}		
+	</script>
+</html>

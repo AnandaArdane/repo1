@@ -1,0 +1,87 @@
+<DOCTYPE! HTML>
+<html>
+<head>
+	<style>
+	body{
+		font-family: consolas;
+		color: blue;
+	}
+	</style>
+	<title>Test Javascript</title>
+</head>
+<body>
+	<h1>CEK SEGITIGA</h1>
+	<script language="JavaScript">
+	document.write("tessst");
+		function cekSegitiga()
+		{
+			var sideA = parseFloat(document.triangleForm.number1.value);
+			var sideB = parseFloat(document.triangleForm.number2.value);
+			var sideC = parseFloat(document.triangleForm.number3.value);
+			var div=document.getElementById("result");
+
+
+			A= sideA*sideA;
+			B= sideB*sideB;
+			C= sideC*sideC;
+
+			if(sideA && sideB && sideC > 0)
+			{
+
+				if ((sideA==sideB)&&(sideB==sideC))
+				{
+					div.innerHTML="INI SEGITIGA SAMA SISI";
+					//alert("INI SEGITIGA SAMA SISI");
+				}
+				else if (((sideA!=sideC)&&(sideA==sideB)) || ((sideB!=sideC)&&(sideA==sideC)) || ((sideA!=sideB)&&(sideB==sideC)))
+				{
+					div.innerHTML="INI SEGITIGA SAMA KAKI";
+					//alert("INI SEGITIGA SAMA KAKI");
+				}
+				else if ((A+B==C)|| (A+C==B) || (B+C==A))
+				{
+					div.innerHTML="INI SEGITIGA SIKU-SIKU";
+					//alert("INI SEGITIGA SIKU-SIKU");
+				}
+				else
+				{
+					div.innerHTML="INI SEGITIGA SEMBARANG";
+					//alert("INI SEGITIGA SEMBARANG");
+				}	
+			
+			}
+			else
+			{
+				div.innerHTML="EROR";
+				//alert("EROR");
+			}
+			
+		}
+		function KllLuas()
+		{
+			var sideA = parseFloat(document.triangleForm.number1.value);
+			var sideB = parseFloat(document.triangleForm.number2.value);
+			var sideC = parseFloat(document.triangleForm.number3.value);
+
+			Keliling=sideA+sideB+sideC;
+			S=(Keliling/2);
+			Luas=Math.sqrt(S*(S-sideA)*(S-sideB)*(S-sideC));
+			alert("Luas:" +Luas+ " dan Keliling:" +Keliling);
+		}
+
+
+	</script>
+
+	<form name="triangleForm">
+		<p> Enter sisi A:
+			<input type="number" id="number1" ><br>
+		<p> Enter sisi B:
+			<input type="number" id="number2"><br>
+		<p> Enter sisi C:
+			<input type="number" id="number3"><br>
+		<p><input type="button" id="button" value="Triangle or Not" onclick="cekSegitiga();">
+		<input type="button" value="Luas dan Keliling" onclick="KllLuas();">
+	</form>
+	<div id="result"></div>
+</body>
+</html>
